@@ -1,0 +1,20 @@
+.navLinkActive {
+  color: #fafafa!important;
+  font-weight: 900 !important;
+  transition: font-weight .1s ease-in-out;
+
+}
+
+.navLinkActive .navlink_underline { 
+  opacity: 1;
+  visibility: visible;
+  max-width: 70%;
+}
+
+.navlink_underline { 
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 5px;
+  transition: .2s;
+}

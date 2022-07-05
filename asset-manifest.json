@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc647a07.chunk.css",
-    "main.js": "/static/js/main.962788ee.chunk.js",
-    "main.js.map": "/static/js/main.962788ee.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6f1c3131.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6f1c3131.js.map",
-    "static/js/2.a976e61a.chunk.js": "/static/js/2.a976e61a.chunk.js",
-    "static/js/2.a976e61a.chunk.js.map": "/static/js/2.a976e61a.chunk.js.map",
+    "main.js": "/static/js/main.f036afae.chunk.js",
+    "main.js.map": "/static/js/main.f036afae.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.aba59b54.js",
+    "runtime-main.js.map": "/static/js/runtime-main.aba59b54.js.map",
+    "static/js/2.98e62ea1.chunk.js": "/static/js/2.98e62ea1.chunk.js",
+    "static/js/2.98e62ea1.chunk.js.map": "/static/js/2.98e62ea1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.cc647a07.chunk.css.map": "/static/css/main.cc647a07.chunk.css.map",
-    "static/js/2.a976e61a.chunk.js.LICENSE.txt": "/static/js/2.a976e61a.chunk.js.LICENSE.txt",
-    "static/media/ellipse.1a7bafa1.svg": "/static/media/ellipse.1a7bafa1.svg",
-    "static/media/logo.690215d6.png": "/static/media/logo.690215d6.png",
-    "static/media/nav_active.68ec0d80.svg": "/static/media/nav_active.68ec0d80.svg",
-    "static/media/resume.00e61f31.pdf": "/static/media/resume.00e61f31.pdf",
-    "static/media/zalo.e1c5e92d.svg": "/static/media/zalo.e1c5e92d.svg"
+    "static/js/2.98e62ea1.chunk.js.LICENSE.txt": "/static/js/2.98e62ea1.chunk.js.LICENSE.txt",
+    "static/media/blog-9-4.de736e0b.jpg": "/static/media/blog-9-4.de736e0b.jpg",
+    "static/media/blog2.aba7a3cb.jpg": "/static/media/blog2.aba7a3cb.jpg",
+    "static/media/city-profile.4d64bba9.jpg": "/static/media/city-profile.4d64bba9.jpg",
+    "static/media/resume.6415b1b5.pdf": "/static/media/resume.6415b1b5.pdf",
+    "static/media/testimonial-6-2.21f2048f.jpg": "/static/media/testimonial-6-2.21f2048f.jpg",
+    "static/media/testimonial-6-3.d35bef0d.jpg": "/static/media/testimonial-6-3.d35bef0d.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6f1c3131.js",
-    "static/js/2.a976e61a.chunk.js",
-    "static/css/main.cc647a07.chunk.css",
-    "static/js/main.962788ee.chunk.js"
+    "static/js/runtime-main.aba59b54.js",
+    "static/js/2.98e62ea1.chunk.js",
+    "static/js/main.f036afae.chunk.js"
   ]
 }

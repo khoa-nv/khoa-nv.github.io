@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.f036afae.chunk.js",
-    "main.js.map": "/static/js/main.f036afae.chunk.js.map",
+    "main.js": "/static/js/main.2b09f1cf.chunk.js",
+    "main.js.map": "/static/js/main.2b09f1cf.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.aba59b54.js",
     "runtime-main.js.map": "/static/js/runtime-main.aba59b54.js.map",
     "static/js/2.98e62ea1.chunk.js": "/static/js/2.98e62ea1.chunk.js",
@@ -11,13 +11,14 @@
     "static/media/blog-9-4.de736e0b.jpg": "/static/media/blog-9-4.de736e0b.jpg",
     "static/media/blog2.aba7a3cb.jpg": "/static/media/blog2.aba7a3cb.jpg",
     "static/media/city-profile.4d64bba9.jpg": "/static/media/city-profile.4d64bba9.jpg",
-    "static/media/resume.6415b1b5.pdf": "/static/media/resume.6415b1b5.pdf",
+    "static/media/khoa-nguyen-viet-cv.a74fbb76.pdf": "/static/media/khoa-nguyen-viet-cv.a74fbb76.pdf",
+    "static/media/profile-picture.0f36fcb9.jpg": "/static/media/profile-picture.0f36fcb9.jpg",
     "static/media/testimonial-6-2.21f2048f.jpg": "/static/media/testimonial-6-2.21f2048f.jpg",
     "static/media/testimonial-6-3.d35bef0d.jpg": "/static/media/testimonial-6-3.d35bef0d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.aba59b54.js",
     "static/js/2.98e62ea1.chunk.js",
-    "static/js/main.f036afae.chunk.js"
+    "static/js/main.2b09f1cf.chunk.js"
   ]
 }

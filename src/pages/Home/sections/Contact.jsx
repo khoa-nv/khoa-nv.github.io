@@ -1,12 +1,76 @@
+/* eslint-disable  no-useless-escape */
+
+import { useState } from "react";
+import validator from "validator";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
-import bgImage from "assets/images/examples/blog2.jpg";
+import MyFirebase from "lib/firebase/MyFirebase";
+
+const myFireBase = new MyFirebase("messages");
 
 const Contact = () => {
+  const [data, setData] = useState({
+    email: "",
+    fullName: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState({
+    email: -1,
+    fullName: -1,
+    message: -1,
+  });
+
+  const [isSubmited, setIsSubmited] = useState(false);
+
+  const _handleSubmit = () => {
+    setIsSubmited(true);
+    const bodyData = { ...data };
+    let error = {};
+    if (!bodyData.fullName.trim()) {
+      error = {
+        ...error,
+        fullName: 0,
+      };
+    }
+
+    if (!bodyData.email.trim() || !validator.isEmail(bodyData.email)) {
+      error = {
+        ...error,
+        email: 0,
+      };
+    }
+
+    if (!bodyData.message.trim()) {
+      error = {
+        ...error,
+        message: 0,
+      };
+    }
+
+    setStatus(error);
+    if (Object.keys(error).length > 0) return;
+
+    try {
+      myFireBase.add(data);
+    } catch (err) {
+      /* eslint-disable no-console */
+      console.log(err);
+    }
+  };
+
+  const _hanldeChange = (key, value) => {
+    if (isSubmited) setIsSubmited(false);
+    setData({
+      ...data,
+      [key]: value,
+    });
+  };
+
   return (
     <MKBox component="section" py={{ xs: 0, lg: 6 }}>
       <Container>
@@ -175,30 +239,65 @@ const Contact = () => {
                       <Grid item xs={12} pr={1} mb={6}>
                         <MKInput
                           variant="standard"
-                          label="My name is"
+                          label="Your name is"
                           placeholder="Full Name"
+                          error={status.fullName === 0}
                           InputLabelProps={{ shrink: true }}
                           fullWidth
+                          value={data.fullName}
+                          success={data.fullName.trim() !== ""}
+                          onChange={(e) =>
+                            _hanldeChange(
+                              "fullName",
+                              e.target.value
+                                .replaceAll(/[^\w\s]/gi, "")
+                                .toLowerCase()
+                                .replace(/\b[a-z]/g, (letter) => {
+                                  return letter.toUpperCase();
+                                })
+                            )
+                          }
                         />
                       </Grid>
                       <Grid item xs={12} pr={1} mb={6}>
                         <MKInput
                           variant="standard"
-                          label="I'm looking for"
-                          placeholder="What you love"
+                          label="Your email is"
+                          placeholder="How can I contact with you?"
                           InputLabelProps={{ shrink: true }}
                           fullWidth
+                          error={status.email === 0}
+                          success={status.email === 1}
+                          value={data.email}
+                          onChange={(e) => {
+                            const test = validator.isEmail(
+                              e.target.value.toString()
+                            );
+
+                            setStatus({
+                              ...status,
+                              email: test ? 1 : 0,
+                            });
+
+                            _hanldeChange("email", e.target.value);
+                          }}
                         />
                       </Grid>
                       <Grid item xs={12} pr={1} mb={6}>
                         <MKInput
                           variant="standard"
                           label="Your message"
-                          placeholder="I want to say that..."
+                          placeholder="What're you want to say? :)"
                           InputLabelProps={{ shrink: true }}
                           fullWidth
                           multiline
                           rows={6}
+                          error={status.message === 0}
+                          success={data.message.trim() !== ""}
+                          value={data.message}
+                          onChange={(e) =>
+                            _hanldeChange("message", e.target.value)
+                          }
                         />
                       </Grid>
                     </Grid>
@@ -211,7 +310,12 @@ const Contact = () => {
                       textAlign="right"
                       ml="auto"
                     >
-                      <MKButton variant="gradient" color="info">
+                      <MKButton
+                        variant="gradient"
+                        color="info"
+                        onClick={_handleSubmit}
+                        disabled={isSubmited}
+                      >
                         Send Message
                       </MKButton>
                     </Grid>

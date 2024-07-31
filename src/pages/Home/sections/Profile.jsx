@@ -6,6 +6,7 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 // Images
+import profileImg from "assets/img/profile-picture.jpg";
 
 const Profile = () => {
   const handleShowResume = () => {
@@ -21,7 +22,7 @@ const Profile = () => {
         <Grid container item xs={12} justifyContent="center" mx="auto">
           <MKBox mt={{ xs: -16, md: -20 }} textAlign="center">
             <MKAvatar
-              src={"https://resources.khoanv.dev/images/profile.jpeg"}
+              src={profileImg}
               alt="Khoa Nguyen"
               size="xxl"
               shadow="xl"

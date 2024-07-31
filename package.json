@@ -2,9 +2,6 @@
   "name": "landing-page",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "16"
-  },
   "dependencies": {
     "@aws-amplify/ui-react": "^3.0.4",
     "@emotion/cache": "11.4.0",

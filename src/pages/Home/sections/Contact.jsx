@@ -8,9 +8,7 @@ import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
-import MyFirebase from "lib/firebase/MyFirebase";
-
-const myFireBase = new MyFirebase("messages");
+import contactBg from "assets/img/contact.jpg";
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -27,49 +25,9 @@ const Contact = () => {
 
   const [isSubmited, setIsSubmited] = useState(false);
 
-  const _handleSubmit = () => {
-    setIsSubmited(true);
-    const bodyData = { ...data };
-    let error = {};
-    if (!bodyData.fullName.trim()) {
-      error = {
-        ...error,
-        fullName: 0,
-      };
-    }
+  const _handleSubmit = () => {};
 
-    if (!bodyData.email.trim() || !validator.isEmail(bodyData.email)) {
-      error = {
-        ...error,
-        email: 0,
-      };
-    }
-
-    if (!bodyData.message.trim()) {
-      error = {
-        ...error,
-        message: 0,
-      };
-    }
-
-    setStatus(error);
-    if (Object.keys(error).length > 0) return;
-
-    try {
-      myFireBase.add(data);
-    } catch (err) {
-      /* eslint-disable no-console */
-      console.log(err);
-    }
-  };
-
-  const _hanldeChange = (key, value) => {
-    if (isSubmited) setIsSubmited(false);
-    setData({
-      ...data,
-      [key]: value,
-    });
-  };
+  const _hanldeChange = (key, value) => {};
 
   return (
     <MKBox component="section" py={{ xs: 0, lg: 6 }}>
@@ -98,7 +56,7 @@ const Contact = () => {
                     `${linearGradient(
                       rgba(gradients.dark.main, 0.8),
                       rgba(gradients.dark.state, 0.8)
-                    )}, url("https://resources.khoanv.dev/images/contact-background.jpg")`,
+                    )}, url(${contactBg})`,
                   backgroundSize: "cover",
                 }}
               >
@@ -164,7 +122,7 @@ const Contact = () => {
                         ml={2}
                         fontWeight="regular"
                       >
-                        Tra Vinh Province, Vietnam
+                        Ho Chi Minh City, Vietnam
                       </MKTypography>
                     </MKBox>
                     <MKBox mt={3}>
@@ -199,7 +157,7 @@ const Contact = () => {
                         color="white"
                         size="large"
                         iconOnly
-                        href="https://www.instagram.com/_ig.khoanv/"
+                        href="https://www.instagram.com/ins.khoanv/"
                         target="_blank"
                       >
                         <i
